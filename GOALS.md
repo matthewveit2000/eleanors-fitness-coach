@@ -27,8 +27,8 @@ _Last updated: 2026-08-29_
    - No batch cooking or tupperware meal prep. Nutrition strategy relies 100% on **low-friction, zero-prep staples** (Fairlife shakes, lactose-free milk, eggs, rotisserie chicken, Greek yogurt, healthy grab-and-go deli/takeout).
 
 ## Target Metrics
-- **Calories:** ~2,000 kcal/day (lean maintenance / recomp baseline)
-- **Protein:** ~130g/day (0.9g/lb bodyweight)
-- **Fat:** ~60g/day
-- **Carbs:** ~235g/day (plenty of glycogen for 12h shifts and Hyrox endurance)
+- **Calories:** ~1,500 kcal/day (revised 8/29 per request for fat loss deficit)
+- **Protein:** ~130g/day (0.9g/lb bodyweight — kept high to protect lean muscle)
+- **Fat:** ~45g/day (essential floor for hormonal baseline)
+- **Carbs:** ~145g/day (fills remainder to fuel training and shifts)
 - **Weigh-Ins:** Once a week (consistent morning post-void)

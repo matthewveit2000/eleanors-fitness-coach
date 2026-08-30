@@ -32,7 +32,7 @@ _Completed on: 2026-08-29_
 ## 5. Nutrition & Food Preferences
 - **Dietary Style:** Omnivore
 - **Tracking Approach:** Full Macros (Calories, Protein, Fat, Carbs)
-- **Starting Targets:** ~2,000 kcal · ~130g Protein · ~60g Fat · ~235g Carbs
+- **Starting Targets:** ~1,500 kcal · ~130g Protein · ~45g Fat · ~145g Carbs (revised 8/29 per request)
 - **Protein Staples:** Fairlife chocolate protein shakes, lactose-free milk (Fairlife 2%), eggs/boiled eggs
 - **Weigh-In Frequency:** Once a week (off-day morning)
 

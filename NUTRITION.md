@@ -4,20 +4,20 @@ _Last updated: 2026-08-29_
 
 ## Targets & Macro Breakdown (Full Macros)
 
-Eleanor tracks full macros to fuel high physical demands (12-hour nurse shifts + Hyrox training) while maintaining energy and body composition.
+Eleanor tracks full macros. Targets revised 8/29 per request to **1,500 kcal/day** for an active fat-loss deficit, while holding protein high at ~130g to protect lean muscle tissue.
 
 | Nutrient | Target | Daily Basis |
 |---|---|---|
-| **Calories** | **~2,000 kcal/day** | Lean maintenance baseline (Mifflin-St Jeor BMR ~1,420 kcal &times; 1.55 high nurse + Hyrox activity) |
-| **Protein** | **~130g/day** | ~0.9g per pound bodyweight (145 lb) for optimal muscle repair and athletic recovery |
-| **Fat** | **~60g/day** | Healthy baseline (~27% of energy) for hormone health and sustained satiety |
-| **Carbs** | **~235g/day** | High-energy fuel (~47% of energy) for glycogen replenishment and shift endurance |
+| **Calories** | **~1,500 kcal/day** | Revised 8/29 per request &mdash; active fat-loss deficit (~500 kcal below maintenance) |
+| **Protein** | **~130g/day** | ~0.9g per pound bodyweight (145 lb) &mdash; non-negotiable floor to preserve lean muscle in a deficit |
+| **Fat** | **~45g/day** | Essential minimum (~27% of energy) for endocrine/hormone health and satiety |
+| **Carbs** | **~145g/day** | Remainder of budget (~39% of energy) allocated to fuel high-intensity training and 12h shifts |
 
 ---
 
 ## The Zero Food-Prep Protocol
 
-Eleanor does **not** food prep. To hit 130g protein and ~2,000 calories with zero tupperware prep, her plan relies on **high-yield, ready-to-eat convenience staples**:
+Eleanor does **not** food prep. To hit 130g protein inside a tighter 1,500 kcal budget with zero tupperware prep, her plan relies on **high-yield, ready-to-eat convenience staples**:
 
 ### Preferred Staples (Instant & Grab-and-Go)
 - **Fairlife Chocolate Protein Shakes (Ready-to-Drink):** 150 kcal, 30g protein, 2.5g fat, 4g carbs. (Perfect for fast hospital breakroom fueling).

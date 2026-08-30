@@ -50,3 +50,4 @@ Tracks calorie and macro adjustments against Eleanor's once-a-week scale trend a
 | Date | Calorie Target | Macros (P / F / C) | Reasoning |
 |------|----------------|---------------------|-----------|
 | 2026-08-29 | ~2,000 kcal | 130g P / 60g F / 235g C | Initial athletic baseline established from onboarding profile (145 lb, 5'6", nurse 12h shifts + Hyrox training). |
+| 2026-08-29 | ~1,500 kcal | 130g P / 45g F / 145g C | Revised per user request to 1,500 kcal for an active fat-loss deficit. Protein kept at ~130g (0.9g/lb) to prevent muscle loss. |
