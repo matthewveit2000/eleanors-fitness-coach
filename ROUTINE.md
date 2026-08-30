@@ -1,93 +1,61 @@
-# Current Routine — Eleanor
+# Training Routine — Eleanor
 
 _Last updated: 2026-08-29_
 
-## Design Principles
-- **Full body / Upper-Lower rotation.** High-frequency stimulus (hitting each muscle group ≥2x per week) for superior hypertrophic response and scheduling flexibility.
-- **80/20 Efficiency.** Prioritize high-yield compound lifts and effective isolation exercises over excessive junk volume. Keep training sessions crisp (~45–60 minutes).
-- **Joint-Friendly Biomechanics.** Favor exercises that allow natural joint paths and controlled loads. Adjust exercise selection based on individual biomechanics and any injury considerations noted in `GOALS.md`.
-- **Antagonist Supersets.** Pair non-competing muscle groups (e.g. Chest ↔ Back, Quads ↔ Hamstrings/Abs, Delts ↔ Arms) sharing the same area to eliminate setup lag and allow passive intra-set recovery without extending total workout time.
-
-## Hypertrophy Training Parameters (Evidence-Based)
-- **Volume:** Target 10–20 hard sets per muscle group per week (minimum effective dose ~6–10 sets/week).
-- **Frequency:** Each muscle group trained 2–3x/week optimizes muscle protein synthesis windows.
-- **Rep Ranges:** 6–12 reps on heavier compound movements; 10–15 reps on machines and cable isolation.
-- **Proximity to Failure:** Most working sets taken to 1–2 reps in reserve (RIR), with occasional safe machine sets to 0 RIR.
-- **Progressive Overload:** When the upper rep range is achieved with solid form across all sets, increase load next session and reset to the bottom of the rep range.
-
-## Muscle Grouping & Volume Landmarks
-Based on Dr. Mike Israetel's Renaissance Periodization (RP) hypertrophy research. Volume is audited strictly by **direct working sets** for the target muscle group (no fractional synergist credit applied):
-- **MEV (Minimum Effective Volume):** Lowest weekly volume to stimulate measurable growth.
-- **MAV (Maximum Adaptive Volume / "Optimal"):** Weekly volume range yielding optimal hypertrophy.
-
-| Muscle | Dr. Israetel MEV | Achieved, Days 1–3 (Direct) | Dr. Israetel MAV (Optimal) | Achieved, Days 1–4 (Direct) |
-|---|---|---|---|---|
-| Chest | 8–10 | 9 | 12–20 | 12 |
-| Back | 10–12 | 12 | 14–22 | 15 |
-| Quads | 8–10 | 9 | 12–18 | 12 |
-| Hamstrings | 6 | 6 | 10–16 | 10 |
-| Side Delt | 6–8 | 8 | 12–18 | 12 |
-| Rear Delt | 6–8 | 6 | 10–16 | 10 |
-| Biceps | 6–8 | 6 | 10–16 | 10 |
-| Triceps | 4–6 | 6 | 10–14 | 10 |
-| Glutes | 0–4 (direct) | 6+ | 6–12 | 8+ |
-| Calves | 6–8 | 0 (or direct) | 12–16 | Optional |
-| Abs | 0–4 | 6 | 6–10 | 6–8 |
+## Athlete Context & Programming Design
+- **Experience:** Advanced lifter with full access to commercial gym free weights, racks, cables, and pin machines.
+- **Goals:** General athleticism, stamina, lower resting heart rate (RHR), Hyrox readiness, and balanced full-body physique development.
+- **The Nurse Shift Model (6 ON / 8 OFF):**
+  - **6 Shift Days (12-Hour Shifts):** On hospital floor logging 10k–15k steps. Gym sessions are completely optional. Sleep and recovery take priority.
+  - **8 Days OFF:** Primary training window. Programmed as a flexible 4–5 day rotation of lifting, Hyrox conditioning, and studio recovery.
+- **Workout Density:** Antagonist supersets (pairing non-competing muscles) to keep total session time strictly within **45–55 minutes**.
 
 ---
 
-## Suggested Weights from Estimated 1RM
-Suggested working weights are dynamically computed from logged performance using the Epley formula:
+## 5-Day Modular Routine (Loaded into Days Off)
+
+### Session 1 — Lower Body (Glutes, Hamstrings & Quads)
+- Superset: Barbell Hip Thrust or Dumbbell Romanian Deadlift (RDL) 3x8–12 @ **—** (Glutes/Hams) ↔ Core Planks / Deadbugs 3x45s @ **bodyweight**
+- Superset: Leg Press or Barbell Goblet Squat 3x10–12 @ **—** (Quads/Glutes) ↔ Seated or Lying Leg Curl 3x10–15 @ **—** (Hamstrings)
+- Superset: Bulgarian Split Squats or Walking Lunges 3x10–12/leg @ **—** (Glutes/Quads) ↔ Standing Calf Raise / Ankle Mobility 3x15 @ **—**
+- Cardio Finisher: 12-3-30 Incline Treadmill Walk (12% incline, 3.0 mph, 15–20 min) — builds aerobic base and lower resting heart rate.
+
+### Session 2 — Upper Body & Posture (Shoulders, Back & Arms)
+- Superset: Dumbbell Overhead Shoulder Press 3x8–12 @ **—** (Shoulders) ↔ Lat Pulldown or Pull-Ups 4x8–12 @ **—** (Back/Lats)
+- Superset: Incline Dumbbell Chest Press 3x10–12 @ **—** (Chest/Delts) ↔ Seated Cable Row 4x10–12 @ **—** (Upper Back/Posture)
+- Superset: Dumbbell Lateral Raise 3x12–15 @ **—** (Side Delt) ↔ Face Pulls 3x15 @ **—** (Rear Delt/Posture)
+- Finisher: Triceps Rope Pushdown 3x10–12 @ **—** ↔ Dumbbell Biceps Curl 3x10–12 @ **—**
+- Cardio: 15 min easy Zone 2 cooldown or walk.
+
+### Session 3 — Hyrox Conditioning & Aerobic Engine
+- Hyrox Functional Stations:
+  - Sled Push / Pull (or heavy treadmill pushes) 4 sets
+  - Rowing Machine or SkiErg: 4 &times; 500m intervals at sustained pace
+  - Dumbbell Farmer's Carry: 4 &times; 50m heavy walk
+  - Wall Balls or Sandbag Lunges: 3 &times; 15–20 reps
+- Aerobic Base Run: 20–25 minutes sustained Zone 2 jogging/running (targeting low aerobic heart rate to drop resting HR).
+
+### Session 4 — Full Body Athletic Strength
+- Superset: Trap Bar Deadlift or Barbell Squat 3x6–10 @ **—** (Full Body Power) ↔ Hanging Leg Raises / Cable Woodchoppers 3x12–15 @ **bodyweight**
+- Superset: Dumbbell Flat Bench Press or Push-Ups 3x8–12 @ **—** (Chest) ↔ Chest-Supported Dumbbell Row 3x10–12 @ **—** (Back)
+- Superset: Cable Glute Kickbacks or Cable Pull-Throughs 3x12–15 @ **—** (Glutes) ↔ Overhead Cable Triceps Ext 3x12–15 @ **—** (Triceps)
+- Cardio Finisher: 12-3-30 Incline Treadmill Walk (15 min).
+
+### Session 5 — Active Recovery & Studio Class
+- Studio Class (Pilates, Yoga, or Lagree) OR 45-minute outdoor Zone 2 walk/jog.
+- Focus: Joint mobility, spinal decompression, and parasympathetic recovery.
+
+---
+
+## The 6-Day Shift Block Protocol (Hospital Runs)
+- **Primary Stimulus:** 10,000–15,000 daily floor steps while working.
+- **Gym Expectation:** Zero pressure.
+- **Optional Micro-Dose:** If feeling energetic before a shift: 15–20 min 12-3-30 incline walk or 10 min core & mobility flow. Never sacrifice sleep before a 12-hour shift.
+
+---
+
+## Suggested Weights from Performance
+Suggested loads will automatically calculate from logged sets via the Epley formula:
 $$\text{e1RM} = \text{weight} \times \left(1 + \frac{\text{reps}}{30}\right)$$
-
-- **90% Training Max Haircut:** To account for accumulated fatigue across 3–4 consecutive working sets within a superset session, suggested weights solve from a Training Max equal to $90\%$ of e1RM:
-  $$\text{Suggested Weight} = \frac{0.90 \times \text{e1RM}}{1 + \frac{\text{reps}}{30}}$$
-- Rounded to practical increments (2.5 lb or 5 lb).
-- Suggested weights update automatically whenever an e1RM increases.
-- Shows `—` until an initial set is logged for that movement.
-
----
-
-## Weekly Split Template (3–5 Days/Week)
-
-Days 1–3 hit the MEV floor for every muscle group. Day 4 is an optional additive booster reaching Optimal (MAV). Day 5 is dedicated to cardio or conditioning.
-
-### Day 1 — Full Body A (Upper Compound & Squat/Leg Focus)
-- Superset: Dumbbell / Machine Chest Press 3x8–12 @ **—** (Chest) ↔ Lat Pulldown or Pull-Ups 4x8–12 @ **—** (Back)
-- Superset: Leg Press or Squat Variation 3x10–15 @ **—** (Quads/Glutes) ↔ Core / Crunches 3x15–25 @ **bodyweight** (Abs)
-- Superset: Lateral Raise (DB or Cable) 3x12–15 @ **—** (Side Delt) ↔ Biceps Curl 3x10–12 @ **—** (Biceps)
-- Finisher: Reverse Pec Deck / Face Pulls 3x12–15 @ **—** (Rear Delt)
-- Cardio: Zone 2 cardio, 20–30 min
-
-### Day 2 — Full Body B (Incline Compound, Knee Flexion/Extension & Cables)
-- Superset: Incline DB / Machine Press 3x8–12 @ **—** (Chest) ↔ Cable Seated Row 4x10–12 @ **—** (Back)
-- Superset: Leg Extension 3x12–15 @ **—** (Quads) ↔ Leg Curl (Seated or Lying) 3x12–15 @ **—** (Hamstrings)
-- Superset: Lateral Raise 3x12–15 @ **—** (Side Delt) ↔ Hammer Curl 3x10–12 @ **—** (Biceps)
-- Finisher: Triceps Rope Pushdown 3x10–12 @ **—** (Triceps)
-- Cardio: Interval or HIIT cardio (e.g. 15–20 min)
-
-### Day 3 — Full Body C (Flyes, Unilateral Legs & Vertical Cables)
-- Superset: Pec Deck Flyes 3x12–15 @ **—** (Chest) ↔ Reverse Pec Deck 3x12–15 @ **—** (Rear Delt)
-- Superset: Lat Pulldown or High Row 4x10–12 @ **—** (Back) ↔ Overhead Cable Triceps Extension 3x10–12 @ **—** (Triceps)
-- Superset: Bulgarian Split Squats or Lunges 3x10–12/leg @ **—** (Quads/Glutes) ↔ Leg Curl 3x12–15 @ **—** (Hamstrings)
-- Finisher: Lateral Raise 2x12–15 @ **—** (Side Delt) ↔ Core Planks / Crunches 3 sets @ **bodyweight**
-- Cardio: Zone 2 cardio, 20–30 min
-
-### Day 4 — Optimal Volume Booster (MAV Day)
-Additive session that elevates weekly direct volume from MEV to MAV across all muscle groups:
-- Superset: Incline Press 3x8–12 @ **—** (Chest) ↔ Cable Row 3x10–12 @ **—** (Back)
-- Superset: Leg Extension 3x12–15 @ **—** (Quads) ↔ Leg Curl 4x12–15 @ **—** (Hamstrings)
-- Superset: Lateral Raise 4x12–15 @ **—** (Side Delt) ↔ Reverse Pec Deck 4x12–15 @ **—** (Rear Delt)
-- Superset: Biceps Curls 4x10–12 @ **—** (Biceps) ↔ Triceps Pushdowns 4x10–12 @ **—** (Triceps)
-- Cardio: Optional Zone 2
-
-### Day 5 — Optional Conditioning & Active Recovery
-- Aerobic capacity / endurance run or cycle (Zone 2, 30–45 min)
-- Functional mobility and core stability
-
----
-
-## Notes & Audit Rules
-- **Weekly volume is evaluated Monday–Sunday.** When auditing volume against MEV/MAV, only count sessions from the most recent Monday through Sunday. Reset each Monday.
-- **Untracked weeks (vacations) are off-weeks, not volume misses.** Do not flag muscle groups as missed during planned recovery periods.
-- Log every session in `workouts/YYYY-MM.md` matching what was actually completed. Suggested weights update automatically as performance data is logged.
+Using a 90% Training Max to account for multi-set fatigue.
+Loads show `—` until Eleanor logs her first working sets.

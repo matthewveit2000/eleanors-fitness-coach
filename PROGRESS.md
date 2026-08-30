@@ -2,53 +2,51 @@
 
 _Last updated: 2026-08-29_
 
-## Bodyweight / Measurements
+## Bodyweight / Measurements (Weekly Weigh-In)
 | Date | Weight | Notes |
 |------|--------|-------|
-| _[YYYY-MM-DD]_ | _[e.g. 135 lb]_ | Initial baseline weigh-in |
-
-### Post-Gap Weigh-In Rule
-A weigh-in taken within ~3 days of returning from an untracked stretch (vacation/travel, see `README.md` → Logging coverage and gaps) is **not a trend point**. Travel food, sodium, and disrupted routine inflate water weight that is not adipose tissue. Record the reading and annotate it as post-travel, but wait for a same-conditions weigh-in after ~3–5 days of normal routine before evaluating trends or recalibrating calories. No calorie-balance reconciliation is performed across windows containing untracked days.
+| 2026-08-29 | 145.0 lb | Baseline starting weight; height 5'6", age 25. Starting trend: slowly increasing. Target: lean maintenance / athletic recomp. |
 
 ---
 
-## Lift PRs
-| Lift | Weight x Reps | Date |
-|------|---------------|------|
-|      |               |      |
+## Resting Heart Rate (RHR) & Cardiovascular Efficiency
+*Primary Non-Scale Victory Target: Tracked via Apple Watch to monitor aerobic adaptation from Zone 2 and 12-3-30 training.*
+
+| Date | Avg Resting HR | 7-Day Trend | Notes |
+|------|----------------|-------------|-------|
+| 2026-08-29 | _[e.g. 62 bpm]_ | Baseline | Initial Apple Watch baseline |
 
 ---
 
-## Run PRs
-| Distance | Time | Date |
-|----------|------|------|
-|          |      |      |
+## Hyrox Benchmark Times & Distances
+| Event / Station | Metric / Time | Date | Notes |
+|-----------------|---------------|------|-------|
+| 1,000m SkiErg   | —             | —    |       |
+| 50m Sled Push   | —             | —    |       |
+| 50m Sled Pull   | —             | —    |       |
+| 80m Burpee Broad Jumps | —      | —    |       |
+| 1,000m Row      | —             | —    |       |
+| 200m Farmer's Carry   | —       | —    |       |
+| 100m Sandbag Lunges   | —       | —    |       |
+| 75–100 Wall Balls     | —       | —    |       |
+| 1 km Running Split    | —       | —    |       |
 
 ---
 
-## Estimated 1RMs
+## Estimated 1RMs Leaderboard
 Inferred from logged working sets via the Epley formula:
 $$\text{e1RM} = \text{weight} \times \left(1 + \frac{\text{reps}}{30}\right)$$
-- Evaluated on working sets close to failure (RIR 0–2). Sets with unstated effort default to **0 RIR**.
-- Reliable for sets of ≤12 reps; past 12 reps, results are marked as Medium/Low confidence (directional trend indicator).
-- Updates like a PR: an exercise's e1RM only updates when a set implies a higher number than what is currently recorded. Off days never decrease the recorded e1RM.
-- Suggested working weights in `ROUTINE.md` apply a **90% Training Max haircut** to this e1RM to account for cumulative multi-set intra-workout fatigue.
-
-### The Gym-Comparability Rule
-Machine leverages and cable pulleys vary substantially across facilities. When a logged weight is >15–20% higher or lower than an established baseline without a noted gym change:
-1. Treat the new number as unconfirmed and flag it with warning markers (⚠️).
-2. Track different machine setups as separate entries rather than overwriting verified baselines.
-3. Suggested weights in `ROUTINE.md` will keep the verified baseline until the new machine setup is confirmed.
+Populates automatically as gym sessions are logged. Suggested working weights in `ROUTINE.md` apply a 90% Training Max haircut.
 
 | Exercise | Est. 1RM | Confidence | Based on (weight x reps, date) |
 |---|---|---|---|
-| _No exercises logged yet_ | — | — | Populates automatically as workouts are logged |
+| _No exercises logged yet_ | — | — | Populates automatically from logged sets |
 
 ---
 
 ## Nutrition Calibration Log
-Tracks calorie and macro target adjustments over time alongside explicit scientific reasoning.
+Tracks calorie and macro adjustments against Eleanor's once-a-week scale trend and training energy.
 
-| Date | Calorie Target | Reasoning |
-|------|----------------|-----------|
-| 2026-08-29 | _[TBD]_ | Initial baseline establishment |
+| Date | Calorie Target | Macros (P / F / C) | Reasoning |
+|------|----------------|---------------------|-----------|
+| 2026-08-29 | ~2,000 kcal | 130g P / 60g F / 235g C | Initial athletic baseline established from onboarding profile (145 lb, 5'6", nurse 12h shifts + Hyrox training). |
