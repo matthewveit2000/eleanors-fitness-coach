@@ -1,0 +1,8 @@
+# Local tooling artifacts — never part of the logged fitness/nutrition data.
+# If you ran a local server or script to preview dashboard.html, its output
+# does not belong in this repo. See AGENTS.md → Repo hygiene.
+*.log
+__pycache__/
+*.pyc
+.DS_Store
+node_modules/
