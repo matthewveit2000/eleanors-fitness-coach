@@ -481,7 +481,7 @@
 
   <!-- Sync Note Bar (Preserved for AGENTS.md) -->
   <div class="sync-bar">
-    <span class="sync-note">Synced with GOALS.md / ROUTINE.md / NUTRITION.md &middot; last updated 2026-08-29</span>
+    <span class="sync-note">Synced with GOALS.md / ROUTINE.md / NUTRITION.md &middot; last updated 2026-08-30</span>
     <span class="btn-pill" style="font-size:0.75rem; padding:2px 8px;">Mountain Time</span>
   </div>
 
@@ -669,9 +669,14 @@
 <script>
   // Global Athlete Targets
   var TARGETS = { kcal: 1500, protein: 130, fat: 45, carbs: 145 };
-  var NUTRITION_LOG = {};
+  var NUTRITION_LOG = {
+    '2026-08-30': [
+      { name: 'Fairlife 2% Milk (116g)', kcal: 58, protein: 6, fat: 2, carbs: 3 },
+      { name: 'Homemade French Toast (3 slices)', kcal: 491, protein: 28, fat: 24, carbs: 41 }
+    ]
+  };
   var DAY_STATUS = {};
-  var TODAY = '2026-08-29';
+  var TODAY = '2026-08-30';
   var selectedDate = TODAY;
   var WEIGH_INS = [
     { date: '2026-08-29', weight: 145.0, notes: 'Baseline starting weight' }
