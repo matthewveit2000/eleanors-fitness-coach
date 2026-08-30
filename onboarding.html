@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Eleanor's Fitness Coach — Athlete Intake Form</title>
+  <title>Eleanor's Fitness Coach — Intake Form</title>
   <style>
     :root {
       --bg: #0d1117;
@@ -21,9 +21,6 @@
       --good-soft: rgba(63, 185, 80, 0.15);
       --warn: #d29922;
       --warn-soft: rgba(210, 153, 34, 0.15);
-      --danger: #f85149;
-      --danger-soft: rgba(248, 81, 73, 0.15);
-      --shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
       --radius: 12px;
       --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       --mono: ui-monospace, "SF Mono", "Cascadia Code", monospace;
@@ -45,9 +42,6 @@
       --good-soft: rgba(26, 127, 55, 0.12);
       --warn: #9a6700;
       --warn-soft: rgba(154, 103, 0, 0.12);
-      --danger: #cf222e;
-      --danger-soft: rgba(207, 34, 46, 0.12);
-      --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -62,33 +56,33 @@
     }
 
     .wrap {
-      max-width: 760px;
+      max-width: 680px;
       margin: 0 auto;
-      padding: clamp(16px, 4vw, 32px) clamp(14px, 3vw, 24px);
+      padding: clamp(16px, 4vw, 32px) clamp(14px, 3vw, 20px);
     }
 
+    /* Top banner */
     header.form-header {
       text-align: center;
-      margin-bottom: 28px;
-      padding-bottom: 20px;
+      margin-bottom: 24px;
+      padding-bottom: 18px;
       border-bottom: 1px solid var(--border);
     }
 
-    .badge {
+    .badge-pill {
       display: inline-block;
-      padding: 4px 12px;
+      padding: 4px 14px;
       border-radius: 999px;
       font-size: 0.8rem;
       font-weight: 600;
-      background: var(--accent-soft);
-      color: var(--accent);
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      background: var(--good-soft);
+      color: var(--good);
+      margin-bottom: 12px;
+      letter-spacing: 0.3px;
     }
 
     h1 {
-      font-size: clamp(1.5rem, 4vw, 2.1rem);
+      font-size: clamp(1.5rem, 4vw, 2rem);
       font-weight: 800;
       letter-spacing: -0.5px;
       margin-bottom: 8px;
@@ -96,43 +90,27 @@
 
     p.subhead {
       color: var(--ink-soft);
-      font-size: 0.96rem;
-      max-width: 580px;
+      font-size: 0.94rem;
+      line-height: 1.5;
+      max-width: 520px;
       margin: 0 auto;
     }
 
-    /* Progress bar */
-    .progress-wrap {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: var(--bg);
-      padding: 10px 0;
-      margin-bottom: 24px;
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(8px);
-    }
-    .progress-bar-bg {
-      width: 100%;
-      height: 8px;
+    .callout-optional {
       background: var(--surface-2);
-      border-radius: 999px;
-      overflow: hidden;
-    }
-    .progress-bar-fill {
-      height: 100%;
-      width: 0%;
-      background: linear-gradient(90deg, var(--accent), var(--good));
-      border-radius: 999px;
-      transition: width 0.3s ease;
-    }
-    .progress-text {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.78rem;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 0.88rem;
       color: var(--ink-soft);
-      margin-top: 4px;
-      font-family: var(--mono);
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .callout-optional strong {
+      color: var(--ink);
     }
 
     /* Form Section Cards */
@@ -140,42 +118,56 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: clamp(18px, 4vw, 28px);
-      margin-bottom: 24px;
-      box-shadow: var(--shadow);
+      padding: clamp(18px, 4vw, 24px);
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
 
     .section-head {
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 18px;
-      padding-bottom: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
       border-bottom: 1px solid var(--border);
     }
     .section-icon {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       line-height: 1;
     }
     .section-title {
-      font-size: 1.15rem;
+      font-size: 1.12rem;
       font-weight: 700;
+    }
+    .section-tag {
+      margin-left: auto;
+      font-size: 0.75rem;
+      color: var(--ink-faint);
+      font-family: var(--mono);
     }
 
     .field-group {
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
     .field-group:last-child {
       margin-bottom: 0;
     }
 
     label.field-label {
-      display: block;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
       font-weight: 600;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       margin-bottom: 6px;
       color: var(--ink);
     }
+    label.field-label .opt-tag {
+      font-size: 0.75rem;
+      font-weight: normal;
+      color: var(--ink-faint);
+    }
+
     .field-hint {
       font-size: 0.8rem;
       color: var(--ink-soft);
@@ -188,7 +180,7 @@
     textarea,
     select {
       width: 100%;
-      padding: 10px 14px;
+      padding: 10px 12px;
       border-radius: 8px;
       border: 1px solid var(--border-strong);
       background: var(--surface-2);
@@ -196,68 +188,76 @@
       font-size: 0.92rem;
       font-family: inherit;
       outline: none;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, background 0.2s;
     }
     input[type="text"]:focus,
     input[type="number"]:focus,
     textarea:focus,
     select:focus {
       border-color: var(--accent);
+      background: var(--surface);
     }
     textarea {
       resize: vertical;
-      min-height: 70px;
+      min-height: 65px;
     }
 
-    /* Grid choices (Radio / Checkboxes styled as clickable cards) */
+    .grid-row-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .grid-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 520px) {
+      .grid-row-3 { grid-template-columns: 1fr; }
+      .grid-row-2 { grid-template-columns: 1fr; }
+    }
+
+    /* Choice pills / cards */
     .choices-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 10px;
-      margin-top: 6px;
+      grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+      gap: 8px;
+      margin-top: 4px;
     }
     .choices-grid.two-col {
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 
-    .choice-card {
+    .choice-chip {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: 8px;
-      padding: 10px 12px;
+      padding: 9px 12px;
       background: var(--surface-2);
       border: 1px solid var(--border);
       border-radius: 8px;
       cursor: pointer;
-      font-size: 0.88rem;
-      transition: all 0.2s ease;
+      font-size: 0.87rem;
+      transition: all 0.15s ease;
       user-select: none;
     }
-    .choice-card:hover {
+    .choice-chip:hover {
       border-color: var(--accent);
       background: var(--accent-soft);
     }
-    .choice-card input[type="radio"],
-    .choice-card input[type="checkbox"] {
-      margin-top: 3px;
+    .choice-chip input[type="radio"],
+    .choice-chip input[type="checkbox"] {
+      margin: 0;
       accent-color: var(--accent);
     }
-    .choice-card.selected {
+    .choice-chip.selected {
       border-color: var(--accent);
       background: var(--accent-soft);
+      color: var(--ink);
       font-weight: 600;
     }
 
-    .grid-row-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-    @media (max-width: 550px) {
-      .grid-row-2 { grid-template-columns: 1fr; }
-    }
-
-    /* Bottom Action Bar */
+    /* Sticky Bottom Action Bar */
     .action-bar {
       position: fixed;
       bottom: 0;
@@ -265,7 +265,7 @@
       right: 0;
       background: var(--surface);
       border-top: 1px solid var(--border);
-      padding: 14px 20px;
+      padding: 12px 18px;
       display: flex;
       justify-content: center;
       gap: 12px;
@@ -277,13 +277,13 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 11px 22px;
+      padding: 11px 24px;
       border-radius: 8px;
       font-size: 0.95rem;
       font-weight: 600;
       cursor: pointer;
       border: none;
-      transition: transform 0.15s ease, background 0.2s;
+      transition: transform 0.15s ease, opacity 0.2s;
     }
     .btn:active {
       transform: scale(0.98);
@@ -304,7 +304,7 @@
       background: var(--surface-3);
     }
 
-    /* Modal / Result Drawer */
+    /* Result Modal */
     .modal-overlay {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -324,16 +324,11 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       width: 100%;
-      max-width: 680px;
+      max-width: 640px;
       max-height: 85vh;
       display: flex;
       flex-direction: column;
-      box-shadow: var(--shadow);
-      animation: popIn 0.2s ease-out;
-    }
-    @keyframes popIn {
-      from { transform: scale(0.95); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
     }
     .modal-head {
       padding: 16px 20px;
@@ -343,12 +338,12 @@
       align-items: center;
     }
     .modal-body {
-      padding: 20px;
+      padding: 18px 20px;
       overflow-y: auto;
       flex: 1;
     }
     .modal-foot {
-      padding: 14px 20px;
+      padding: 12px 20px;
       border-top: 1px solid var(--border);
       display: flex;
       justify-content: flex-end;
@@ -362,223 +357,173 @@
       transform: translateX(-50%);
       background: var(--good);
       color: #fff;
-      padding: 10px 20px;
+      padding: 10px 22px;
       border-radius: 8px;
       font-weight: 600;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      font-size: 0.92rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
       z-index: 300;
       display: none;
-      animation: fadeIn 0.2s;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translate(-50%, -10px); }
-      to { opacity: 1; transform: translate(-50%, 0); }
     }
   </style>
 </head>
 <body>
 
-<div class="toast" id="toast">✨ Copied to clipboard! Ready to paste to your coach.</div>
+<div class="toast" id="toast">✨ Copied to clipboard! Ready to paste into chat.</div>
 
 <div class="wrap">
   <header class="form-header">
-    <span class="badge">Athlete Intake</span>
-    <h1>Eleanor's Coaching Setup</h1>
-    <p class="subhead">Fill out whatever you like below! Tap the button at the bottom whenever you're done to generate your personalized setup.</p>
+    <span class="badge-pill">100% Optional • Fill what you like</span>
+    <h1>Eleanor's Fitness Profile</h1>
+    <p class="subhead">This questionnaire shapes your training routine, nutrition targets, and personalized dashboard. Skip anything you don't feel like answering!</p>
   </header>
 
-  <!-- Sticky Progress Bar -->
-  <div class="progress-wrap">
-    <div class="progress-bar-bg">
-      <div class="progress-bar-fill" id="progress-fill"></div>
-    </div>
-    <div class="progress-text">
-      <span>Form Progress</span>
-      <span id="progress-percent">0% Completed</span>
+  <div class="callout-optional">
+    <span style="font-size: 1.3rem;">💡</span>
+    <div>
+      <strong>Every single field is optional.</strong> Even if you only share your primary goal or favorite foods, your coach can get started and calibrate the rest as you go.
     </div>
   </div>
 
   <form id="intake-form" onsubmit="event.preventDefault(); showResultModal();">
 
-    <!-- 1. Physical Profile -->
+    <!-- 1. The Basics (For Calories & Baseline) -->
     <div class="section-card">
       <div class="section-head">
         <span class="section-icon">📏</span>
-        <h2 class="section-title">1. Physical Profile & Demographics</h2>
+        <h2 class="section-title">1. Physical Baseline</h2>
+        <span class="section-tag">Optional</span>
       </div>
+      <div class="field-hint">Used strictly for estimating baseline calories & protein targets. Skip if preferred!</div>
 
-      <div class="grid-row-2">
+      <div class="grid-row-3">
         <div class="field-group">
-          <label class="field-label" for="age">Age</label>
+          <label class="field-label" for="age">Age <span class="opt-tag">Optional</span></label>
           <input type="number" id="age" name="age" placeholder="e.g. 26" min="15" max="99">
         </div>
         <div class="field-group">
-          <label class="field-label" for="height">Height</label>
+          <label class="field-label" for="height">Height <span class="opt-tag">Optional</span></label>
           <input type="text" id="height" name="height" placeholder="e.g. 5'6&quot;">
         </div>
-      </div>
-
-      <div class="grid-row-2">
         <div class="field-group">
-          <label class="field-label" for="weight">Current Scale Weight</label>
+          <label class="field-label" for="weight">Current Weight <span class="opt-tag">Optional</span></label>
           <input type="text" id="weight" name="weight" placeholder="e.g. 135 lb">
-        </div>
-        <div class="field-group">
-          <label class="field-label" for="weight-trend">Recent Weight Trend</label>
-          <select id="weight-trend" name="weight-trend">
-            <option value="Stable / maintaining">Stable / maintaining</option>
-            <option value="Slowly increasing">Slowly increasing</option>
-            <option value="Slowly decreasing">Slowly decreasing</option>
-            <option value="Fluctuating / Not sure">Fluctuating / Not sure</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="field-group">
-        <label class="field-label">Wearables & Tech (Check all you use)</label>
-        <div class="choices-grid">
-          <label class="choice-card"><input type="checkbox" name="wearable" value="Apple Watch"> Apple Watch</label>
-          <label class="choice-card"><input type="checkbox" name="wearable" value="Oura Ring"> Oura Ring</label>
-          <label class="choice-card"><input type="checkbox" name="wearable" value="WHOOP"> WHOOP</label>
-          <label class="choice-card"><input type="checkbox" name="wearable" value="Garmin"> Garmin</label>
-          <label class="choice-card"><input type="checkbox" name="wearable" value="Fitbit"> Fitbit</label>
-          <label class="choice-card"><input type="checkbox" name="wearable" value="None" checked> None / Phone only</label>
         </div>
       </div>
     </div>
 
-    <!-- 2. Goals & Priorities -->
+    <!-- 2. Primary Goals & Target Areas -->
     <div class="section-card">
       <div class="section-head">
         <span class="section-icon">🎯</span>
-        <h2 class="section-title">2. Primary Goals & Vision</h2>
+        <h2 class="section-title">2. Goals & Priorities</h2>
+        <span class="section-tag">Optional</span>
       </div>
 
       <div class="field-group">
-        <label class="field-label">Primary Fitness Objective</label>
+        <label class="field-label">Primary Goal <span class="opt-tag">Pick one or skip</span></label>
         <div class="choices-grid two-col">
-          <label class="choice-card"><input type="radio" name="main-goal" value="Build lean muscle & tone up" checked> <span>💪 <strong>Tone & Muscle:</strong> Sculpt visible tone & muscle shape</span></label>
-          <label class="choice-card"><input type="radio" name="main-goal" value="Body recomposition (stay lean + build muscle)"> <span>⚖️ <strong>Recomposition:</strong> Drop body fat while building muscle</span></label>
-          <label class="choice-card"><input type="radio" name="main-goal" value="Fat loss & slimming down"> <span>🔥 <strong>Fat Loss:</strong> Steady, sustainable fat reduction</span></label>
-          <label class="choice-card"><input type="radio" name="main-goal" value="General athleticism, energy & stamina"> <span>⚡ <strong>Stamina & Health:</strong> Daily energy, cardiovascular endurance</span></label>
+          <label class="choice-chip"><input type="radio" name="main-goal" value="Tone up & build visible muscle"> <span>💪 <strong>Tone & Muscle:</strong> Build shape & definition</span></label>
+          <label class="choice-chip"><input type="radio" name="main-goal" value="Body recomposition (stay lean + build muscle)"> <span>⚖️ <strong>Recomposition:</strong> Shed fat while gaining muscle</span></label>
+          <label class="choice-chip"><input type="radio" name="main-goal" value="Fat loss & getting leaner"> <span>🔥 <strong>Fat Loss:</strong> Steady, comfortable fat loss</span></label>
+          <label class="choice-chip"><input type="radio" name="main-goal" value="Stamina, daily energy & general athleticism"> <span>⚡ <strong>Stamina & Energy:</strong> Feel strong, fit & capable</span></label>
         </div>
       </div>
 
       <div class="field-group">
-        <label class="field-label">Physique Focus / Target Areas (Check all that apply)</label>
+        <label class="field-label">Physique Focus Areas <span class="opt-tag">Check any you want to emphasize</span></label>
         <div class="choices-grid">
-          <label class="choice-card"><input type="checkbox" name="focus-area" value="Glutes & Hamstrings" checked> Glutes & Hamstrings</label>
-          <label class="choice-card"><input type="checkbox" name="focus-area" value="Legs & Quads"> Legs & Quads</label>
-          <label class="choice-card"><input type="checkbox" name="focus-area" value="Shoulders & Arms" checked> Shoulders & Arms</label>
-          <label class="choice-card"><input type="checkbox" name="focus-area" value="Back & Posture" checked> Back & Posture</label>
-          <label class="choice-card"><input type="checkbox" name="focus-area" value="Abs & Core" checked> Abs & Core</label>
-          <label class="choice-card"><input type="checkbox" name="focus-area" value="Full Body Balance"> Full Body Balance</label>
+          <label class="choice-chip"><input type="checkbox" name="focus-area" value="Glutes & Hamstrings"> Glutes & Hamstrings</label>
+          <label class="choice-chip"><input type="checkbox" name="focus-area" value="Legs & Thighs"> Legs & Thighs</label>
+          <label class="choice-chip"><input type="checkbox" name="focus-area" value="Shoulders & Arms"> Shoulders & Arms</label>
+          <label class="choice-chip"><input type="checkbox" name="focus-area" value="Back & Posture"> Back & Posture</label>
+          <label class="choice-chip"><input type="checkbox" name="focus-area" value="Core & Abs"> Core & Abs</label>
+          <label class="choice-chip"><input type="checkbox" name="focus-area" value="Full Body Balance"> Full Body Balance</label>
         </div>
       </div>
 
       <div class="field-group">
-        <label class="field-label" for="milestones">Upcoming Events or Target Dates</label>
-        <div class="field-hint">e.g. Trips, weddings, races, or personal milestones</div>
-        <input type="text" id="milestones" name="milestones" placeholder="e.g. Beach vacation in mid-October, or None">
-      </div>
-
-      <div class="field-group">
-        <label class="field-label" for="non-scale-wins">Non-Scale Victories That Matter Most to You</label>
-        <div class="field-hint">e.g. Fitting comfortably in favorite clothes, steady all-day energy, feeling confident in the gym</div>
-        <textarea id="non-scale-wins" name="non-scale-wins" placeholder="e.g. Feeling strong, having high energy throughout the day, seeing shoulder definition..."></textarea>
+        <label class="field-label" for="milestones">Upcoming Event, Trip or Target Date <span class="opt-tag">Optional</span></label>
+        <input type="text" id="milestones" name="milestones" placeholder="e.g. Vacation in October, a wedding, or None">
       </div>
     </div>
 
-    <!-- 3. Training Background & Schedule -->
+    <!-- 3. Your Training Routine & Schedule -->
     <div class="section-card">
       <div class="section-head">
         <span class="section-icon">🏋️</span>
-        <h2 class="section-title">3. Training Experience & Schedule</h2>
-      </div>
-
-      <div class="field-group">
-        <label class="field-label">Lifting / Strength Experience</label>
-        <div class="choices-grid">
-          <label class="choice-card"><input type="radio" name="experience" value="Beginner"> Beginner (New to lifting)</label>
-          <label class="choice-card"><input type="radio" name="experience" value="Some experience" checked> Some experience</label>
-          <label class="choice-card"><input type="radio" name="experience" value="Intermediate"> Intermediate (1–3 yrs)</label>
-          <label class="choice-card"><input type="radio" name="experience" value="Advanced"> Advanced (3+ yrs)</label>
-        </div>
+        <h2 class="section-title">3. Training & Schedule</h2>
+        <span class="section-tag">Optional</span>
       </div>
 
       <div class="grid-row-2">
         <div class="field-group">
-          <label class="field-label" for="days-per-week">Days per Week Available to Train</label>
+          <label class="field-label" for="days-per-week">Days Available to Workout <span class="opt-tag">Optional</span></label>
           <select id="days-per-week" name="days-per-week">
-            <option value="3 days / week">3 days / week (Recommended for consistency)</option>
-            <option value="4 days / week" selected>4 days / week (Optimal for hypertrophy)</option>
-            <option value="5 days / week">5 days / week (Lifting + dedicated cardio)</option>
+            <option value="">-- Select preferred days --</option>
             <option value="2 days / week">2 days / week (Minimalist)</option>
+            <option value="3 days / week">3 days / week (Balanced & efficient)</option>
+            <option value="4 days / week">4 days / week (Optimal progression)</option>
+            <option value="5 days / week">5 days / week (Lifting + cardio)</option>
           </select>
         </div>
         <div class="field-group">
-          <label class="field-label" for="session-duration">Ideal Workout Duration</label>
+          <label class="field-label" for="session-duration">Ideal Workout Duration <span class="opt-tag">Optional</span></label>
           <select id="session-duration" name="session-duration">
-            <option value="35–45 minutes">35–45 minutes (Crisp & efficient)</option>
-            <option value="45–60 minutes" selected>45–60 minutes (Standard)</option>
-            <option value="60–75 minutes">60–75 minutes</option>
+            <option value="">-- Select session length --</option>
+            <option value="30–40 minutes">30–40 minutes (Quick & crisp)</option>
+            <option value="45–55 minutes">45–55 minutes (Standard)</option>
+            <option value="60 minutes">60 minutes</option>
           </select>
         </div>
       </div>
 
       <div class="field-group">
-        <label class="field-label">Equipment Access (Check all available)</label>
+        <label class="field-label">Workout Location & Equipment <span class="opt-tag">Check what you have</span></label>
         <div class="choices-grid">
-          <label class="choice-card"><input type="checkbox" name="equipment" value="Dumbbells" checked> Dumbbells</label>
-          <label class="choice-card"><input type="checkbox" name="equipment" value="Barbells / Squat Rack" checked> Barbells / Rack</label>
-          <label class="choice-card"><input type="checkbox" name="equipment" value="Cable Machines" checked> Cable Stacks</label>
-          <label class="choice-card"><input type="checkbox" name="equipment" value="Pin-Loaded Machines" checked> Pin Machines</label>
-          <label class="choice-card"><input type="checkbox" name="equipment" value="Treadmill / Cardio"> Treadmill / Cardio</label>
-          <label class="choice-card"><input type="checkbox" name="equipment" value="Home Bands / Mat"> Home Bands / Mat</label>
+          <label class="choice-chip"><input type="checkbox" name="equipment" value="Full Commercial Gym (Weights, cables, machines)"> Full Commercial Gym</label>
+          <label class="choice-chip"><input type="checkbox" name="equipment" value="Apartment Gym (Dumbbells + basic machines)"> Apartment Gym</label>
+          <label class="choice-chip"><input type="checkbox" name="equipment" value="Home Dumbbells / Resistance Bands"> Home Dumbbells / Bands</label>
+          <label class="choice-chip"><input type="checkbox" name="equipment" value="Boutique Classes (Pilates, Spin, Yoga)"> Studio Classes</label>
         </div>
       </div>
 
       <div class="field-group">
-        <label class="field-label" for="disliked-exercises">Movements You Dislike or Want Excluded</label>
-        <div class="field-hint">Any exercise you dread, hate, or want to never see programmed</div>
-        <input type="text" id="disliked-exercises" name="disliked-exercises" placeholder="e.g. Burpees, barbell back squats, Bulgarian split squats...">
+        <label class="field-label" for="disliked-exercises">Exercises You Hate or Dislike <span class="opt-tag">Optional</span></label>
+        <div class="field-hint">Tell your coach what you NEVER want to see in your routine!</div>
+        <input type="text" id="disliked-exercises" name="disliked-exercises" placeholder="e.g. Burpees, lunges, barbell back squats...">
       </div>
 
       <div class="field-group">
-        <label class="field-label">Cardio & Daily Movement Style</label>
+        <label class="field-label">Cardio & Daily Activity Preference <span class="opt-tag">Optional</span></label>
         <div class="choices-grid two-col">
-          <label class="choice-card"><input type="checkbox" name="cardio-pref" value="Daily step goal (8k-10k)" checked> 🚶 Daily Step Goal (8k–10k steps)</label>
-          <label class="choice-card"><input type="checkbox" name="cardio-pref" value="Incline treadmill walking (12-3-30)" checked> ⛰️ Incline Treadmill Walk (e.g. 12-3-30)</label>
-          <label class="choice-card"><input type="checkbox" name="cardio-pref" value="Outdoor running / jogging"> 🏃 Outdoor Running / Jogging</label>
-          <label class="choice-card"><input type="checkbox" name="cardio-pref" value="Spin / Stationary bike"> 🚴 Stationary Bike / Spin</label>
-          <label class="choice-card"><input type="checkbox" name="cardio-pref" value="Studio classes (Pilates/Yoga)"> 🧘 Studio Classes (Pilates/Yoga)</label>
+          <label class="choice-chip"><input type="checkbox" name="cardio-pref" value="Daily step goal (e.g. 8k–10k steps)"> 🚶 Daily Step Goal (e.g. 8k–10k steps)</label>
+          <label class="choice-chip"><input type="checkbox" name="cardio-pref" value="Incline treadmill walking (12-3-30)"> ⛰️ Incline Treadmill Walk (e.g. 12-3-30)</label>
+          <label class="choice-chip"><input type="checkbox" name="cardio-pref" value="Running / Jogging"> 🏃 Running / Jogging</label>
+          <label class="choice-chip"><input type="checkbox" name="cardio-pref" value="Cycling / Spin class"> 🚴 Cycling / Spin</label>
+          <label class="choice-chip"><input type="checkbox" name="cardio-pref" value="Pilates or Yoga classes"> 🧘 Pilates or Yoga</label>
         </div>
       </div>
     </div>
 
-    <!-- 4. Joints & Biomechanics -->
+    <!-- 4. Joints & Guardrails -->
     <div class="section-card">
       <div class="section-head">
         <span class="section-icon">🛡️</span>
         <h2 class="section-title">4. Joints & Injury Guardrails</h2>
+        <span class="section-tag">Optional</span>
       </div>
 
       <div class="field-group">
-        <label class="field-label">Joint Sensitivities or Past Tweaks (Check any that apply)</label>
+        <label class="field-label">Any Joint Sensitivities or Past Tweaks? <span class="opt-tag">Check any that apply</span></label>
         <div class="choices-grid">
-          <label class="choice-card"><input type="checkbox" name="joint-issues" value="Lower back"> Lower Back</label>
-          <label class="choice-card"><input type="checkbox" name="joint-issues" value="Knees"> Knees</label>
-          <label class="choice-card"><input type="checkbox" name="joint-issues" value="Shoulders"> Shoulders</label>
-          <label class="choice-card"><input type="checkbox" name="joint-issues" value="Wrists"> Wrists</label>
-          <label class="choice-card"><input type="checkbox" name="joint-issues" value="Hips"> Hips</label>
-          <label class="choice-card"><input type="checkbox" name="joint-issues" value="None" checked> None / Feeling healthy</label>
+          <label class="choice-chip"><input type="checkbox" name="joint-issues" value="Lower back"> Lower Back</label>
+          <label class="choice-chip"><input type="checkbox" name="joint-issues" value="Knees"> Knees</label>
+          <label class="choice-chip"><input type="checkbox" name="joint-issues" value="Shoulders"> Shoulders</label>
+          <label class="choice-chip"><input type="checkbox" name="joint-issues" value="Wrists"> Wrists</label>
+          <label class="choice-chip"><input type="checkbox" name="joint-issues" value="Hips"> Hips</label>
+          <label class="choice-chip"><input type="checkbox" name="joint-issues" value="No joint pain / feeling great"> None / Feeling Great</label>
         </div>
-      </div>
-
-      <div class="field-group">
-        <label class="field-label" for="injury-notes">Additional Biomechanical Notes</label>
-        <textarea id="injury-notes" name="injury-notes" placeholder="Describe any joint clicks, past sprains, or positions that feel awkward..."></textarea>
       </div>
     </div>
 
@@ -586,91 +531,72 @@
     <div class="section-card">
       <div class="section-head">
         <span class="section-icon">🥗</span>
-        <h2 class="section-title">5. Nutrition & Food Preferences</h2>
+        <h2 class="section-title">5. Nutrition & Staples</h2>
+        <span class="section-tag">Optional</span>
       </div>
 
       <div class="field-group">
-        <label class="field-label">Dietary Lifestyle / Restrictions</label>
+        <label class="field-label">Dietary Preferences or Restrictions <span class="opt-tag">Optional</span></label>
         <div class="choices-grid">
-          <label class="choice-card"><input type="radio" name="diet" value="Omnivore" checked> Omnivore</label>
-          <label class="choice-card"><input type="radio" name="diet" value="Pescatarian"> Pescatarian</label>
-          <label class="choice-card"><input type="radio" name="diet" value="Vegetarian"> Vegetarian</label>
-          <label class="choice-card"><input type="radio" name="diet" value="Dairy-Free / Lactose Sensitive"> Dairy-Free</label>
-          <label class="choice-card"><input type="radio" name="diet" value="Gluten-Free"> Gluten-Free</label>
+          <label class="choice-chip"><input type="radio" name="diet" value="Omnivore / No restrictions"> Omnivore</label>
+          <label class="choice-chip"><input type="radio" name="diet" value="Pescatarian"> Pescatarian</label>
+          <label class="choice-chip"><input type="radio" name="diet" value="Vegetarian"> Vegetarian</label>
+          <label class="choice-chip"><input type="radio" name="diet" value="Dairy-Free / Lactose-Sensitive"> Dairy-Free</label>
+          <label class="choice-chip"><input type="radio" name="diet" value="Gluten-Free"> Gluten-Free</label>
         </div>
       </div>
 
       <div class="field-group">
-        <label class="field-label">Preferred Tracking Precision</label>
+        <label class="field-label">How Would You Like to Track Food? <span class="opt-tag">Optional</span></label>
         <div class="choices-grid two-col">
-          <label class="choice-card"><input type="radio" name="tracking-style" value="Calories + Protein Only (Recommended)" checked> <span>⭐ <strong>Calories + Protein Only (Recommended):</strong> Flexible with carbs & fats, easiest to sustain</span></label>
-          <label class="choice-card"><input type="radio" name="tracking-style" value="Protein Target + Mindful Portions"> <span>🌱 <strong>Protein First:</strong> Hit a protein target without obsessing over calorie ceilings</span></label>
-          <label class="choice-card"><input type="radio" name="tracking-style" value="Full Macros (Calories, Protein, Fat, Carbs)"> <span>📊 <strong>Full Precision:</strong> Track all 4 metrics</span></label>
+          <label class="choice-chip"><input type="radio" name="tracking-style" value="Calories + Protein Only (Recommended)"> <span>⭐ <strong>Calories + Protein Only (Recommended):</strong> Simple & effective, total freedom with carbs & fats</span></label>
+          <label class="choice-chip"><input type="radio" name="tracking-style" value="Protein Target + Mindful Eating"> <span>🌱 <strong>Protein First:</strong> Hit a protein target without obsessing over calorie ceilings</span></label>
+          <label class="choice-chip"><input type="radio" name="tracking-style" value="Full Precision (Calories, Protein, Fat, Carbs)"> <span>📊 <strong>Full Macros:</strong> Track Calories, Protein, Fat & Carbs</span></label>
         </div>
       </div>
 
       <div class="field-group">
-        <label class="field-label" for="protein-staples">Go-To Protein Sources & Favorite Shakes</label>
-        <div class="field-hint">e.g. Fairlife chocolate shakes, chicken, Greek yogurt, salmon, eggs, Clean Simple Eats...</div>
-        <input type="text" id="protein-staples" name="protein-staples" placeholder="e.g. Fairlife 30g shakes, Chobani Greek yogurt, grilled chicken, eggs">
-      </div>
-
-      <div class="field-group">
-        <label class="field-label" for="everyday-staples">Everyday Staples (Milk, Breakfast, Snacks)</label>
-        <div class="field-hint">What do you consistently eat or drink most days?</div>
-        <textarea id="everyday-staples" name="everyday-staples" placeholder="e.g. Oat milk in morning latte, avocado toast, berries, protein bars..."></textarea>
-      </div>
-
-      <div class="field-group">
-        <label class="field-label" for="social-dining">Social Dining & Alcohol</label>
-        <div class="field-hint">How often do you eat out or have drinks on weekends?</div>
-        <input type="text" id="social-dining" name="social-dining" placeholder="e.g. Eat out ~2 times on weekends, 1-2 glasses of wine on Saturday">
+        <label class="field-label" for="staples">Your Favorite Go-To Foods & Protein Staples <span class="opt-tag">Optional</span></label>
+        <div class="field-hint">e.g. Fairlife chocolate shakes, Greek yogurt, chicken, salmon, eggs, oat milk, favorite snacks...</div>
+        <textarea id="staples" name="staples" placeholder="e.g. Fairlife 30g shakes, Chobani Greek yogurt, grilled chicken, oat milk in morning coffee, berries..."></textarea>
       </div>
     </div>
 
-    <!-- 6. Dashboard Customization -->
+    <!-- 6. Dashboard Customization & Simplification -->
     <div class="section-card">
       <div class="section-head">
         <span class="section-icon">📱</span>
-        <h2 class="section-title">6. Dashboard Customization & Simplification</h2>
+        <h2 class="section-title">6. Dashboard Customization</h2>
+        <span class="section-tag">Optional</span>
       </div>
-      <p class="field-hint" style="margin-bottom: 16px;">We are redesigning the dashboard to be simpler and specific to you!</p>
+      <div class="field-hint">Tell us how you want your dashboard to look and feel!</div>
 
       <div class="field-group">
-        <label class="field-label">Layout Preference</label>
+        <label class="field-label">Dashboard Style <span class="opt-tag">Optional</span></label>
         <div class="choices-grid two-col">
-          <label class="choice-card"><input type="radio" name="dash-layout" value="Minimalist Single Page" checked> <span>✨ <strong>Minimalist View:</strong> Simple one-page layout showing today's runway, today's workout checklist & weekly progress</span></label>
-          <label class="choice-card"><input type="radio" name="dash-layout" value="Simplified Tabbed Layout"> <span>📑 <strong>Tabbed Hub:</strong> Tabs for Today, Routine & Progress (clean & decluttered)</span></label>
+          <label class="choice-chip"><input type="radio" name="dash-layout" value="Minimalist Single Page"> <span>✨ <strong>Minimalist View:</strong> Simple one-page layout showing today's runway, workout checklist & weekly progress</span></label>
+          <label class="choice-chip"><input type="radio" name="dash-layout" value="Clean Tabbed Hub"> <span>📑 <strong>Tabbed Hub:</strong> Tabs for Today, Routine & Progress (simplified)</span></label>
         </div>
       </div>
 
       <div class="field-group">
-        <label class="field-label">Top Features on Your Home Screen (Check what you want to see)</label>
+        <label class="field-label">Features to Show on Your Screen <span class="opt-tag">Check what you find helpful</span></label>
         <div class="choices-grid two-col">
-          <label class="choice-card"><input type="checkbox" name="dash-features" value="Today's Calories & Protein Remaining Runway" checked> 🥗 Calories & Protein Remaining Runway</label>
-          <label class="choice-card"><input type="checkbox" name="dash-features" value="Today's Workout Checklist with Tap Checkboxes" checked> ✅ Today's Workout Checklist</label>
-          <label class="choice-card"><input type="checkbox" name="dash-features" value="Weekly Workout Completion Counter (e.g. 3 of 4)" checked> 📊 Weekly Consistency Counter</label>
-          <label class="choice-card"><input type="checkbox" name="dash-features" value="Daily Step Count Goal" checked> 👟 Daily Step / Movement Goal</label>
-          <label class="choice-card"><input type="checkbox" name="dash-features" value="Clean Bodyweight Trend Line"> ⚖️ Bodyweight Trend Line</label>
-          <label class="choice-card"><input type="checkbox" name="dash-features" value="Personal Milestone / Win Badges"> 🏆 Personal Best Badges</label>
+          <label class="choice-chip"><input type="checkbox" name="dash-features" value="Calories & Protein remaining runway"> 🥗 Calories & Protein remaining runway</label>
+          <label class="choice-chip"><input type="checkbox" name="dash-features" value="Today's workout exercise checklist"> ✅ Today's workout exercise checklist</label>
+          <label class="choice-chip"><input type="checkbox" name="dash-features" value="Weekly workout completion counter"> 📊 Weekly workout completion counter</label>
+          <label class="choice-chip"><input type="checkbox" name="dash-features" value="Daily step count / movement target"> 👟 Daily step target tracker</label>
+          <label class="choice-chip"><input type="checkbox" name="dash-features" value="Bodyweight trend line"> ⚖️ Bodyweight trend line</label>
+          <label class="choice-chip"><input type="checkbox" name="dash-features" value="Personal milestone badges"> 🏆 Personal milestone badges</label>
         </div>
       </div>
 
       <div class="field-group">
-        <label class="field-label">Features to Hide / Remove</label>
+        <label class="field-label">Features to Hide / Strip Out <span class="opt-tag">Optional</span></label>
         <div class="choices-grid two-col">
-          <label class="choice-card"><input type="checkbox" name="dash-hide" value="Hide technical volume MEV/MAV tables" checked> 🚫 Hide complex sports-science volume tables</label>
-          <label class="choice-card"><input type="checkbox" name="dash-hide" value="Hide 1-Rep-Max Leaderboards" checked> 🚫 Hide 1-rep-max (1RM) leaderboard</label>
-          <label class="choice-card"><input type="checkbox" name="dash-hide" value="Hide Fat and Carb progress bars" checked> 🚫 Hide Fat & Carb bars (Focus only on Cal + Protein)</label>
-        </div>
-      </div>
-
-      <div class="field-group">
-        <label class="field-label">Primary Viewing Device</label>
-        <div class="choices-grid">
-          <label class="choice-card"><input type="radio" name="device" value="Phone (Mobile browser)" checked> 📱 Phone (Mobile)</label>
-          <label class="choice-card"><input type="radio" name="device" value="Laptop / Desktop"> 💻 Laptop / Desktop</label>
-          <label class="choice-card"><input type="radio" name="device" value="Both equally"> 🔄 Both equally</label>
+          <label class="choice-chip"><input type="checkbox" name="dash-hide" value="Hide sports-science volume (MEV/MAV) tables"> 🚫 Hide complex sports-science volume tables</label>
+          <label class="choice-chip"><input type="checkbox" name="dash-hide" value="Hide 1-Rep-Max leaderboards"> 🚫 Hide 1-rep-max leaderboards</label>
+          <label class="choice-chip"><input type="checkbox" name="dash-hide" value="Hide Fat & Carb bars"> 🚫 Hide Fat & Carb bars (Calories & Protein only)</label>
         </div>
       </div>
     </div>
@@ -679,33 +605,24 @@
     <div class="section-card">
       <div class="section-head">
         <span class="section-icon">💬</span>
-        <h2 class="section-title">7. Coaching Style & Communication</h2>
+        <h2 class="section-title">7. Coaching Style</h2>
+        <span class="section-tag">Optional</span>
       </div>
 
       <div class="field-group">
-        <label class="field-label">Coach Persona & Tone</label>
+        <label class="field-label">Coach Persona <span class="opt-tag">Optional</span></label>
         <div class="choices-grid">
-          <label class="choice-card"><input type="radio" name="coach-tone" value="Encouraging & Grounded" checked> 🌟 Encouraging & Supportive</label>
-          <label class="choice-card"><input type="radio" name="coach-tone" value="Direct & Analytical"> 📈 Direct & Numbers-Focused</label>
-          <label class="choice-card"><input type="radio" name="coach-tone" value="High Accountability"> ⚡ High Accountability</label>
+          <label class="choice-chip"><input type="radio" name="coach-tone" value="Encouraging & supportive"> 🌟 Encouraging & Supportive</label>
+          <label class="choice-chip"><input type="radio" name="coach-tone" value="Direct & numbers-focused"> 📈 Direct & Numbers-Focused</label>
+          <label class="choice-chip"><input type="radio" name="coach-tone" value="High accountability"> ⚡ High Accountability</label>
         </div>
       </div>
 
       <div class="field-group">
-        <label class="field-label">Post-Logging Feedback Length</label>
+        <label class="field-label">Response Length After Logging <span class="opt-tag">Optional</span></label>
         <div class="choices-grid two-col">
-          <label class="choice-card"><input type="radio" name="feedback-length" value="Punchy 1–2 sentences" checked> ⚡ <strong>Punchy & Quick:</strong> 1–2 sentences with macro runway</label>
-          <label class="choice-card"><input type="radio" name="feedback-length" value="Short paragraph / conversational"> 💬 <strong>Conversational:</strong> Short paragraph with coaching tips</label>
-        </div>
-      </div>
-
-      <div class="field-group">
-        <label class="field-label">Weigh-In Frequency Preference</label>
-        <div class="choices-grid">
-          <label class="choice-card"><input type="radio" name="weigh-in-freq" value="Once a week" checked> Once a week</label>
-          <label class="choice-card"><input type="radio" name="weigh-in-freq" value="2-3 times per week"> 2–3 times a week</label>
-          <label class="choice-card"><input type="radio" name="weigh-in-freq" value="Daily for trend average"> Daily morning</label>
-          <label class="choice-card"><input type="radio" name="weigh-in-freq" value="Rarely / Focus on clothes & mirror"> Rarely / Non-scale</label>
+          <label class="choice-chip"><input type="radio" name="feedback-length" value="Punchy 1–2 sentences with macro runway"> ⚡ <strong>Punchy & Quick:</strong> 1–2 sentences with macro runway</label>
+          <label class="choice-chip"><input type="radio" name="feedback-length" value="Conversational with coaching tips"> 💬 <strong>Conversational:</strong> Short paragraph with coaching tips</label>
         </div>
       </div>
     </div>
@@ -728,7 +645,7 @@
     </div>
     <div class="modal-body">
       <p style="font-size:0.88rem; color:var(--ink-soft); margin-bottom:12px;">
-        Here is your completed profile! Tap <strong>"Copy to Clipboard"</strong> below and paste it directly into your chat with the coach.
+        Here is your completed profile! Tap <strong>"Copy to Clipboard"</strong> and paste it directly into your chat with your coach.
       </p>
       <textarea id="markdown-output" style="width:100%; height:260px; font-family:var(--mono); font-size:0.82rem;" readonly></textarea>
     </div>
@@ -740,107 +657,130 @@
 </div>
 
 <script>
-  // Theme check
+  // Theme setup
   var theme = localStorage.getItem('theme') || 'dark';
   document.documentElement.setAttribute('data-theme', theme);
 
-  // Card highlight toggle on input change
-  function updateCardSelections() {
-    document.querySelectorAll('.choice-card').forEach(function(card) {
-      var input = card.querySelector('input');
+  // Chip selection visual handler
+  function updateChips() {
+    document.querySelectorAll('.choice-chip').forEach(function(chip) {
+      var input = chip.querySelector('input');
       if (input) {
-        card.classList.toggle('selected', input.checked);
+        chip.classList.toggle('selected', input.checked);
       }
     });
-    updateProgressBar();
   }
-  document.querySelectorAll('.choice-card input').forEach(function(el) {
-    el.addEventListener('change', updateCardSelections);
+  document.querySelectorAll('.choice-chip input').forEach(function(el) {
+    el.addEventListener('change', updateChips);
   });
-  document.querySelectorAll('input, select, textarea').forEach(function(el) {
-    el.addEventListener('input', updateProgressBar);
-  });
+  updateChips();
 
-  // Calculate Progress
-  function updateProgressBar() {
-    var form = document.getElementById('intake-form');
-    var inputs = form.querySelectorAll('input[type="text"], input[type="number"], select, textarea');
-    var filled = 0;
-    inputs.forEach(function(i) {
-      if (i.value.trim().length > 0) filled++;
-    });
-    // Add points for checked radios/checkboxes
-    var checked = form.querySelectorAll('input[type="radio"]:checked, input[type="checkbox"]:checked').length;
-    var totalPoints = inputs.length + 8;
-    var score = filled + Math.min(8, checked);
-    var pct = Math.min(100, Math.round((score / totalPoints) * 100));
-    document.getElementById('progress-fill').style.width = pct + '%';
-    document.getElementById('progress-percent').textContent = pct + '% Completed';
-  }
-  updateCardSelections();
-
-  // Generate Formatted Markdown
+  // Markdown Generator (Omits empty fields cleanly)
   function generateMarkdown() {
     var form = document.getElementById('intake-form');
 
     function getVal(id) {
       var el = document.getElementById(id);
-      return el ? (el.value.trim() || '—') : '—';
+      return el && el.value.trim().length > 0 ? el.value.trim() : null;
     }
     function getRadio(name) {
       var el = form.querySelector('input[name="' + name + '"]:checked');
-      return el ? el.value : '—';
+      return el ? el.value : null;
     }
     function getChecks(name) {
       var checked = Array.from(form.querySelectorAll('input[name="' + name + '"]:checked')).map(function(c) { return c.value; });
-      return checked.length > 0 ? checked.join(', ') : 'None specified';
+      return checked.length > 0 ? checked.join(', ') : null;
     }
 
-    var md = '# Eleanor’s Onboarding Responses\n\n';
-    md += '## 1. Physical Profile\n';
-    md += '- **Age:** ' + getVal('age') + '\n';
-    md += '- **Height:** ' + getVal('height') + '\n';
-    md += '- **Current Weight:** ' + getVal('weight') + '\n';
-    md += '- **Recent Weight Trend:** ' + getVal('weight-trend') + '\n';
-    md += '- **Wearables:** ' + getChecks('wearable') + '\n\n';
+    var lines = ['# Eleanor’s Onboarding Setup\n'];
 
-    md += '## 2. Goals & Priorities\n';
-    md += '- **Primary Goal:** ' + getRadio('main-goal') + '\n';
-    md += '- **Focus Areas:** ' + getChecks('focus-area') + '\n';
-    md += '- **Upcoming Milestones:** ' + getVal('milestones') + '\n';
-    md += '- **Non-Scale Victories:** ' + getVal('non-scale-wins') + '\n\n';
+    // 1. Baseline
+    var age = getVal('age');
+    var height = getVal('height');
+    var weight = getVal('weight');
+    if (age || height || weight) {
+      lines.push('## 1. Physical Baseline');
+      if (age) lines.push('- **Age:** ' + age);
+      if (height) lines.push('- **Height:** ' + height);
+      if (weight) lines.push('- **Current Weight:** ' + weight);
+      lines.push('');
+    }
 
-    md += '## 3. Training & Schedule\n';
-    md += '- **Experience Level:** ' + getRadio('experience') + '\n';
-    md += '- **Weekly Frequency:** ' + getVal('days-per-week') + '\n';
-    md += '- **Session Duration:** ' + getVal('session-duration') + '\n';
-    md += '- **Equipment Access:** ' + getChecks('equipment') + '\n';
-    md += '- **Movements to Exclude:** ' + getVal('disliked-exercises') + '\n';
-    md += '- **Cardio Style:** ' + getChecks('cardio-pref') + '\n\n';
+    // 2. Goals
+    var goal = getRadio('main-goal');
+    var focus = getChecks('focus-area');
+    var milestone = getVal('milestones');
+    if (goal || focus || milestone) {
+      lines.push('## 2. Goals & Priorities');
+      if (goal) lines.push('- **Primary Goal:** ' + goal);
+      if (focus) lines.push('- **Target Focus Areas:** ' + focus);
+      if (milestone) lines.push('- **Milestones / Event Dates:** ' + milestone);
+      lines.push('');
+    }
 
-    md += '## 4. Joints & Guardrails\n';
-    md += '- **Joint Sensitivities:** ' + getChecks('joint-issues') + '\n';
-    md += '- **Notes:** ' + getVal('injury-notes') + '\n\n';
+    // 3. Training
+    var days = getVal('days-per-week');
+    var duration = getVal('session-duration');
+    var equip = getChecks('equipment');
+    var dislikes = getVal('disliked-exercises');
+    var cardio = getChecks('cardio-pref');
+    if (days || duration || equip || dislikes || cardio) {
+      lines.push('## 3. Training Setup');
+      if (days) lines.push('- **Weekly Frequency:** ' + days);
+      if (duration) lines.push('- **Ideal Duration:** ' + duration);
+      if (equip) lines.push('- **Equipment Access:** ' + equip);
+      if (dislikes) lines.push('- **Exercises to Avoid:** ' + dislikes);
+      if (cardio) lines.push('- **Cardio / Activity Style:** ' + cardio);
+      lines.push('');
+    }
 
-    md += '## 5. Nutrition & Staples\n';
-    md += '- **Dietary Style:** ' + getRadio('diet') + '\n';
-    md += '- **Tracking Approach:** ' + getRadio('tracking-style') + '\n';
-    md += '- **Protein Staples:** ' + getVal('protein-staples') + '\n';
-    md += '- **Everyday Staples:** ' + getVal('everyday-staples') + '\n';
-    md += '- **Social Dining & Alcohol:** ' + getVal('social-dining') + '\n\n';
+    // 4. Joints
+    var joints = getChecks('joint-issues');
+    if (joints) {
+      lines.push('## 4. Joint & Biomechanical Guardrails');
+      lines.push('- **Sensitivities / Notes:** ' + joints);
+      lines.push('');
+    }
 
-    md += '## 6. Dashboard Customization\n';
-    md += '- **Layout:** ' + getRadio('dash-layout') + '\n';
-    md += '- **Priority Cards:** ' + getChecks('dash-features') + '\n';
-    md += '- **Features to Hide:** ' + getChecks('dash-hide') + '\n';
-    md += '- **Primary Device:** ' + getRadio('device') + '\n\n';
+    // 5. Nutrition
+    var diet = getRadio('diet');
+    var track = getRadio('tracking-style');
+    var staples = getVal('staples');
+    if (diet || track || staples) {
+      lines.push('## 5. Nutrition & Staples');
+      if (diet) lines.push('- **Dietary Style:** ' + diet);
+      if (track) lines.push('- **Preferred Tracking:** ' + track);
+      if (staples) lines.push('- **Go-To Staples:** ' + staples);
+      lines.push('');
+    }
 
-    md += '## 7. Coaching Style\n';
-    md += '- **Coach Tone:** ' + getRadio('coach-tone') + '\n';
-    md += '- **Feedback Length:** ' + getRadio('feedback-length') + '\n';
-    md += '- **Weigh-In Frequency:** ' + getRadio('weigh-in-freq') + '\n';
+    // 6. Dashboard
+    var layout = getRadio('dash-layout');
+    var features = getChecks('dash-features');
+    var hide = getChecks('dash-hide');
+    if (layout || features || hide) {
+      lines.push('## 6. Dashboard Customization');
+      if (layout) lines.push('- **Preferred Layout:** ' + layout);
+      if (features) lines.push('- **Key Features to Show:** ' + features);
+      if (hide) lines.push('- **Features to Hide:** ' + hide);
+      lines.push('');
+    }
 
-    return md;
+    // 7. Coaching
+    var tone = getRadio('coach-tone');
+    var feedback = getRadio('feedback-length');
+    if (tone || feedback) {
+      lines.push('## 7. Coaching Style');
+      if (tone) lines.push('- **Coaching Tone:** ' + tone);
+      if (feedback) lines.push('- **Feedback Length:** ' + feedback);
+      lines.push('');
+    }
+
+    if (lines.length === 1) {
+      return '# Eleanor’s Onboarding Setup\n\n*(No fields filled out yet — feel free to tap any options above or chat directly with your coach!)*';
+    }
+
+    return lines.join('\n');
   }
 
   function showResultModal() {
@@ -858,7 +798,6 @@
     navigator.clipboard.writeText(text).then(function() {
       showToast();
     }).catch(function() {
-      // Fallback
       var el = document.getElementById('markdown-output');
       el.select();
       document.execCommand('copy');
