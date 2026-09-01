@@ -285,6 +285,9 @@
     .bar-fill.pro { background: var(--good); }
     .bar-fill.fat { background: var(--warn); }
     .bar-fill.carb { background: var(--purple); }
+    .bar-fill.fiber { background: #2ea043; }
+    .bar-fill.sodium { background: #d29922; }
+    .bar-fill.sodium.over { background: var(--danger); }
 
     /* Meal Items List */
     .meal-list {
@@ -571,6 +574,22 @@
         </div>
         <div class="bar-bg"><div class="bar-fill carb" id="bar-fill-carb" style="width: 0%;"></div></div>
       </div>
+
+      <div class="macro-bar-row">
+        <div class="macro-bar-head">
+          <span class="macro-bar-name">Fiber</span>
+          <span class="macro-bar-val" id="bar-val-fiber">0g / 25g</span>
+        </div>
+        <div class="bar-bg"><div class="bar-fill fiber" id="bar-fill-fiber" style="width: 0%;"></div></div>
+      </div>
+
+      <div class="macro-bar-row">
+        <div class="macro-bar-head">
+          <span class="macro-bar-name">Sodium (Limit)</span>
+          <span class="macro-bar-val" id="bar-val-sodium">0 mg / 2,300 mg</span>
+        </div>
+        <div class="bar-bg"><div class="bar-fill sodium" id="bar-fill-sodium" style="width: 0%;"></div></div>
+      </div>
     </div>
 
     <!-- Meals Logged for Selected Date -->
@@ -658,6 +677,7 @@
       <tr><th>Focus Areas</th><td>Full body (Glutes, quads, shoulders, posture, core)</td></tr>
       <tr><th>Non-Scale Goal</th><td>Lower resting heart rate (Apple Watch)</td></tr>
       <tr><th>Nutrition Plan</th><td>~1,500 kcal &middot; 130g P &middot; 45g F &middot; 145g C</td></tr>
+      <tr><th>Fiber & Sodium</th><td><strong>25g Fiber</strong> target &middot; <strong>≤ 2,300 mg Sodium</strong> limit</td></tr>
       <tr><th>Food Prep Rule</th><td><strong>Zero Food Prep</strong> (100% convenience staples)</td></tr>
     </table>
     <div style="text-align:right;">
@@ -668,24 +688,24 @@
 
 <script>
   // Global Athlete Targets
-  var TARGETS = { kcal: 1500, protein: 130, fat: 45, carbs: 145 };
+  var TARGETS = { kcal: 1500, protein: 130, fat: 45, carbs: 145, fiber: 25, sodium: 2300 };
   var NUTRITION_LOG = {
     '2026-08-30': [
-      { name: 'Fairlife 2% Milk (116g)', kcal: 58, protein: 6, fat: 2, carbs: 3 },
-      { name: 'Homemade French Toast (3 slices)', kcal: 491, protein: 28, fat: 24, carbs: 41 },
-      { name: 'Mazevo Apple Cider Brilliance', kcal: 180, protein: 0, fat: 0, carbs: 45 },
-      { name: 'Pineapple w/ Low Sodium Tajin (10 pcs / ~150g)', kcal: 75, protein: 1, fat: 0, carbs: 20 },
-      { name: 'Idahoan Four Cheese Mashed Potatoes (1/2 pouch)', kcal: 220, protein: 6, fat: 5, carbs: 38 },
-      { name: 'Frozen Mixed Vegetables (142g)', kcal: 85, protein: 4, fat: 0.5, carbs: 17 },
-      { name: 'Fairlife Chocolate Protein Shake (1 bottle)', kcal: 150, protein: 30, fat: 2.5, carbs: 4 }
+      { name: 'Fairlife 2% Milk (116g)', kcal: 58, protein: 6, fat: 2, carbs: 3, fiber: 0, sodium: 120 },
+      { name: 'Homemade French Toast (3 slices)', kcal: 491, protein: 28, fat: 24, carbs: 41, fiber: 4.5, sodium: 670 },
+      { name: 'Mazevo Apple Cider Brilliance', kcal: 180, protein: 0, fat: 0, carbs: 45, fiber: 0.5, sodium: 15 },
+      { name: 'Pineapple w/ Low Sodium Tajin (10 pcs / ~150g)', kcal: 75, protein: 1, fat: 0, carbs: 20, fiber: 2, sodium: 122 },
+      { name: 'Idahoan Four Cheese Mashed Potatoes (1/2 pouch)', kcal: 220, protein: 6, fat: 5, carbs: 38, fiber: 2, sodium: 1160 },
+      { name: 'Frozen Mixed Vegetables (142g)', kcal: 85, protein: 4, fat: 0.5, carbs: 17, fiber: 4, sodium: 50 },
+      { name: 'Fairlife Chocolate Protein Shake (1 bottle)', kcal: 150, protein: 30, fat: 2.5, carbs: 4, fiber: 1, sodium: 260 }
     ],
     '2026-08-31': [
-      { name: 'Starbucks Strawberry Açaí Refresher (12 fl oz)', kcal: 75, protein: 0, fat: 0, carbs: 16.5 },
-      { name: 'Frito-Lay Chips (1 bag / 1 pkg)', kcal: 140, protein: 2, fat: 8, carbs: 14 },
-      { name: 'Metamucil Orange Powder (2 scoops / 2 servings)', kcal: 60, protein: 0, fat: 0, carbs: 20 },
-      { name: 'Prepared Entrée Bowl (1 bowl / 125g)', kcal: 510, protein: 9, fat: 26, carbs: 64 },
-      { name: 'Prepared Meal (2.25 servings @ 380 kcal / 17g P)', kcal: 855, protein: 38, fat: 29, carbs: 108 },
-      { name: 'Kirkland Chocolate Chip Granola Bar (1 bar)', kcal: 100, protein: 1, fat: 3, carbs: 17 }
+      { name: 'Starbucks Strawberry Açaí Refresher (12 fl oz)', kcal: 75, protein: 0, fat: 0, carbs: 16.5, fiber: 0, sodium: 15 },
+      { name: 'Frito-Lay Chips (1 bag / 1 pkg)', kcal: 140, protein: 2, fat: 8, carbs: 14, fiber: 1, sodium: 240 },
+      { name: 'Metamucil Orange Powder (2 scoops / 2 servings)', kcal: 60, protein: 0, fat: 0, carbs: 20, fiber: 12, sodium: 20 },
+      { name: 'Prepared Entrée Bowl (1 bowl / 125g)', kcal: 510, protein: 9, fat: 26, carbs: 64, fiber: 7, sodium: 1370 },
+      { name: 'Prepared Meal (2.25 servings @ 380 kcal / 17g P)', kcal: 855, protein: 38, fat: 29, carbs: 108, fiber: 6.5, sodium: 1235 },
+      { name: 'Kirkland Chocolate Chip Granola Bar (1 bar)', kcal: 100, protein: 1, fat: 3, carbs: 17, fiber: 1, sodium: 75 }
     ],
     '2026-09-01': []
   };
@@ -787,13 +807,15 @@
   function renderRunway() {
     document.getElementById('current-date-label').textContent = (selectedDate === TODAY) ? 'Today (' + selectedDate + ')' : selectedDate;
     var meals = NUTRITION_LOG[selectedDate] || [];
-    var totCal = 0, totPro = 0, totFat = 0, totCarb = 0;
+    var totCal = 0, totPro = 0, totFat = 0, totCarb = 0, totFiber = 0, totSodium = 0;
 
     meals.forEach(function(m) {
       totCal += m.kcal || 0;
       totPro += m.protein || 0;
       totFat += m.fat || 0;
       totCarb += m.carbs || 0;
+      totFiber += m.fiber || 0;
+      totSodium += m.sodium || 0;
     });
 
     var remCal = Math.max(0, Math.round(TARGETS.kcal - totCal));
@@ -807,16 +829,29 @@
     var pctPro = Math.min(100, Math.round((totPro / TARGETS.protein) * 100));
     var pctFat = Math.min(100, Math.round((totFat / TARGETS.fat) * 100));
     var pctCarb = Math.min(100, Math.round((totCarb / TARGETS.carbs) * 100));
+    var pctFiber = Math.min(100, Math.round((totFiber / TARGETS.fiber) * 100));
+    var pctSodium = Math.min(100, Math.round((totSodium / TARGETS.sodium) * 100));
 
     document.getElementById('bar-fill-cal').style.width = pctCal + '%';
     document.getElementById('bar-fill-pro').style.width = pctPro + '%';
     document.getElementById('bar-fill-fat').style.width = pctFat + '%';
     document.getElementById('bar-fill-carb').style.width = pctCarb + '%';
+    document.getElementById('bar-fill-fiber').style.width = pctFiber + '%';
+
+    var sodBar = document.getElementById('bar-fill-sodium');
+    sodBar.style.width = pctSodium + '%';
+    if (totSodium > TARGETS.sodium) {
+      sodBar.classList.add('over');
+    } else {
+      sodBar.classList.remove('over');
+    }
 
     document.getElementById('bar-val-cal').textContent = Math.round(totCal) + ' / ' + TARGETS.kcal + ' kcal (' + pctCal + '%)';
     document.getElementById('bar-val-pro').textContent = Math.round(totPro) + 'g / ' + TARGETS.protein + 'g';
     document.getElementById('bar-val-fat').textContent = Math.round(totFat) + 'g / ' + TARGETS.fat + 'g';
     document.getElementById('bar-val-carb').textContent = Math.round(totCarb) + 'g / ' + TARGETS.carbs + 'g';
+    document.getElementById('bar-val-fiber').textContent = (Math.round(totFiber * 10) / 10) + 'g / ' + TARGETS.fiber + 'g (' + pctFiber + '%)';
+    document.getElementById('bar-val-sodium').textContent = Math.round(totSodium).toLocaleString() + ' mg / ' + TARGETS.sodium.toLocaleString() + ' mg (' + pctSodium + '%)';
 
     // Meal List
     var list = document.getElementById('meal-list-container');
@@ -825,9 +860,13 @@
     } else {
       var html = '<h4 style="font-size:0.88rem; font-weight:700; margin-bottom:6px;">Logged Items:</h4>';
       meals.forEach(function(m) {
+        var extraDetails = [];
+        if (m.fiber !== undefined) extraDetails.push(m.fiber + 'g fiber');
+        if (m.sodium !== undefined) extraDetails.push(m.sodium + 'mg Na');
+        var extraStr = extraDetails.length > 0 ? ' &middot; ' + extraDetails.join(', ') : '';
         html += '<div class="meal-item">' +
           '<span class="meal-name">' + m.name + '</span>' +
-          '<span class="meal-macros">' + Math.round(m.kcal) + ' kcal &middot; ' + Math.round(m.protein) + 'g P</span>' +
+          '<span class="meal-macros">' + Math.round(m.kcal) + ' kcal &middot; ' + Math.round(m.protein) + 'g P' + extraStr + '</span>' +
         '</div>';
       });
       list.innerHTML = html;

@@ -31,4 +31,6 @@ _Last updated: 2026-08-29_
 - **Protein:** ~130g/day (0.9g/lb bodyweight — kept high to protect lean muscle)
 - **Fat:** ~45g/day (essential floor for hormonal baseline)
 - **Carbs:** ~145g/day (fills remainder to fuel training and shifts)
+- **Fiber:** ~25g/day (daily target for digestion & satiety)
+- **Sodium:** ≤ 2,300 mg/day (daily upper limit for cardiovascular health)
 - **Weigh-Ins:** Once a week (consistent morning post-void)

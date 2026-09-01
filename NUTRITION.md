@@ -12,6 +12,8 @@ Eleanor tracks full macros. Targets revised 8/29 per request to **1,500 kcal/day
 | **Protein** | **~130g/day** | ~0.9g per pound bodyweight (145 lb) &mdash; non-negotiable floor to preserve lean muscle in a deficit |
 | **Fat** | **~45g/day** | Essential minimum (~27% of energy) for endocrine/hormone health and satiety |
 | **Carbs** | **~145g/day** | Remainder of budget (~39% of energy) allocated to fuel high-intensity training and 12h shifts |
+| **Fiber** | **~25g/day** | Daily target for digestive health, satiety, and blood sugar balance |
+| **Sodium** | **≤ 2,300 mg/day** | Daily upper limit for fluid balance and optimal cardiovascular health |
 
 ---
 
