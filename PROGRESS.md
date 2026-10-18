@@ -1,10 +1,11 @@
 # Progress — Eleanor
 
-_Last updated: 2026-08-29_
+_Last updated: 2026-10-18_
 
 ## Bodyweight / Measurements (Weekly Weigh-In)
 | Date | Weight | Notes |
 |------|--------|-------|
+| 2026-10-18 | 140.3 lb | Down 4.7 lb from baseline (145.0 lb); steady fat loss on ~1,500 kcal deficit while keeping protein high. |
 | 2026-08-29 | 145.0 lb | Baseline starting weight; height 5'6", age 25. Starting trend: slowly increasing. Target: lean maintenance / athletic recomp. |
 
 ---

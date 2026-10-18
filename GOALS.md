@@ -1,12 +1,12 @@
 # Goals — Eleanor
 
-_Last updated: 2026-08-29_
+_Last updated: 2026-10-18_
 
 ## Profile
 - **Age:** 25
 - **Height:** 5'6"
-- **Weight:** 145 lb
-- **Weight Trend:** Slowly increasing
+- **Weight:** 140.3 lb (down from 145.0 lb baseline recorded 8/29)
+- **Weight Trend:** Decreasing (controlled deficit)
 - **Profession & Shift Schedule:** Registered Nurse — working **12-hour shifts: 6 days in a row ON, followed by 8 days OFF** (14-day rotational cycle).
 - **Training Experience:** Advanced lifter
 - **Wearables:** Apple Watch
