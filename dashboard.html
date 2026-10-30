@@ -466,6 +466,200 @@
       text-align: left;
     }
     .table-mini th { color: var(--ink-soft); font-weight: 600; width: 40%; }
+
+    /* Horizontal Calorie Intake Chart (Calories on X, Day on Y) */
+    .chart-controls {
+      display: flex;
+      gap: 6px;
+    }
+    .filter-pill {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--ink-soft);
+      font-size: 0.74rem;
+      padding: 3px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .filter-pill:hover {
+      background: var(--surface-3);
+      color: var(--ink);
+    }
+    .filter-pill.active {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+    .chart-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+    }
+    .chart-legend {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .legend-target-line {
+      display: inline-block;
+      width: 14px;
+      height: 2px;
+      background: var(--good);
+      border-top: 1px dashed var(--good);
+    }
+    .chart-hint {
+      font-size: 0.75rem;
+      color: var(--ink-faint);
+    }
+    .horizontal-chart {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .chart-body {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .chart-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 4px 6px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .chart-row:hover {
+      background: var(--surface-2);
+    }
+    .chart-row.selected {
+      background: var(--accent-soft);
+      outline: 1px solid var(--accent);
+    }
+    .chart-y-label {
+      width: 65px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+      line-height: 1.2;
+    }
+    .chart-day-name {
+      font-size: 0.72rem;
+      color: var(--ink-faint);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .chart-day-date {
+      font-size: 0.84rem;
+      font-weight: 700;
+      font-family: var(--mono);
+      color: var(--ink);
+    }
+    .chart-track {
+      flex: 1;
+      position: relative;
+      height: 26px;
+      background: var(--surface-2);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+    .chart-gridline {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--border);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .chart-target-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--good);
+      border-left: 1px dashed var(--good);
+      pointer-events: none;
+      z-index: 3;
+    }
+    .chart-bar {
+      height: 100%;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 8px;
+      position: relative;
+      z-index: 2;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      min-width: 52px;
+    }
+    .chart-bar.cal-good {
+      background: linear-gradient(90deg, rgba(63, 185, 80, 0.75), var(--good));
+    }
+    .chart-bar.cal-mod {
+      background: linear-gradient(90deg, rgba(88, 166, 255, 0.75), var(--accent));
+    }
+    .chart-bar.cal-high {
+      background: linear-gradient(90deg, rgba(210, 153, 34, 0.75), var(--warn));
+    }
+    .chart-bar-text {
+      font-size: 0.72rem;
+      font-weight: 700;
+      font-family: var(--mono);
+      color: #ffffff;
+      white-space: nowrap;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+    }
+    .chart-x-axis {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 8px;
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+    .x-axis-spacer {
+      width: 65px;
+      flex-shrink: 0;
+    }
+    .x-axis-ticks {
+      flex: 1;
+      position: relative;
+      height: 18px;
+      font-size: 0.7rem;
+      font-family: var(--mono);
+      color: var(--ink-faint);
+    }
+    .x-axis-ticks span {
+      position: absolute;
+      transform: translateX(-50%);
+      top: 0;
+    }
+    .x-axis-ticks span:first-child {
+      transform: none;
+    }
+    .x-axis-ticks span:last-child {
+      transform: translateX(-100%);
+    }
+    .x-axis-title {
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--ink-faint);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
@@ -516,7 +710,7 @@
   <!-- ======================================================== -->
   <!-- CARD 1: TODAY'S MACRO RUNWAY (FULL MACROS) -->
   <!-- ======================================================== -->
-  <div class="card">
+  <div class="card" id="macro-runway-card">
     <div class="card-head">
       <h3 class="card-title">🥗 Today's Macro Runway</h3>
       <span class="btn-pill" style="background:var(--accent-soft); color:var(--accent); font-size:0.75rem;">Target: ~1,500 kcal</span>
@@ -595,6 +789,33 @@
     <!-- Meals Logged for Selected Date -->
     <div class="meal-list" id="meal-list-container">
       <p style="color:var(--ink-soft); font-size:0.85rem; text-align:center; padding:8px 0;">No meals logged yet for this date. Send a photo or description to log!</p>
+    </div>
+  </div>
+
+  <!-- ======================================================== -->
+  <!-- CARD 2: DAILY CALORIE INTAKE GRAPH (CALORIES ON X, DAY ON Y) -->
+  <!-- ======================================================== -->
+  <div class="card" id="calorie-graph-card">
+    <div class="card-head">
+      <h3 class="card-title">📊 Calorie Intake History</h3>
+      <div class="chart-controls">
+        <button class="filter-pill active" onclick="setChartRange(7)">Last 7</button>
+        <button class="filter-pill" onclick="setChartRange(14)">Last 14</button>
+        <button class="filter-pill" onclick="setChartRange(0)">All</button>
+      </div>
+    </div>
+    
+    <div class="chart-meta">
+      <div class="chart-legend">
+        <span class="legend-target-line"></span>
+        <span>Target: <strong>1,500 kcal</strong></span>
+      </div>
+      <span class="chart-hint">Tap any bar to inspect daily runway</span>
+    </div>
+
+    <!-- Chart Container (Calorie Intake on X, Day on Y) -->
+    <div class="horizontal-chart" id="calorie-chart-container">
+      <!-- Injected by renderCalorieChart() -->
     </div>
   </div>
 
@@ -950,10 +1171,113 @@
 
   // Date Nav
   function changeDate(delta) {
-    var d = new Date(selectedDate + 'T00:00:00');
+    var p = selectedDate.split('-');
+    var d = new Date(parseInt(p[0], 10), parseInt(p[1], 10) - 1, parseInt(p[2], 10));
     d.setDate(d.getDate() + delta);
-    selectedDate = d.toISOString().slice(0, 10);
+    var y = d.getFullYear();
+    var m = String(d.getMonth() + 1).padStart(2, '0');
+    var day = String(d.getDate()).padStart(2, '0');
+    selectedDate = y + '-' + m + '-' + day;
     renderRunway();
+    renderCalorieChart();
+  }
+
+  // Horizontal Calorie Chart (Calorie Intake on X, Day on Y)
+  var chartRange = 7;
+
+  function setChartRange(range) {
+    chartRange = range;
+    document.querySelectorAll('.chart-controls .filter-pill').forEach(function(btn, idx) {
+      if (range === 7 && idx === 0) btn.classList.add('active');
+      else if (range === 14 && idx === 1) btn.classList.add('active');
+      else if (range === 0 && idx === 2) btn.classList.add('active');
+      else btn.classList.remove('active');
+    });
+    renderCalorieChart();
+  }
+
+  function renderCalorieChart() {
+    var container = document.getElementById('calorie-chart-container');
+    if (!container) return;
+
+    var allDates = Object.keys(NUTRITION_LOG).sort();
+    if (chartRange > 0) {
+      allDates = allDates.slice(-chartRange);
+    }
+
+    var displayDates = allDates.slice().reverse();
+    var maxScale = 2500;
+    var targetPct = (TARGETS.kcal / maxScale) * 100;
+
+    var html = '<div class="chart-body">';
+    var daysArr = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+    displayDates.forEach(function(dStr) {
+      var meals = NUTRITION_LOG[dStr] || [];
+      var dayCal = 0;
+      var dayPro = 0;
+      meals.forEach(function(m) {
+        dayCal += m.kcal || 0;
+        dayPro += m.protein || 0;
+      });
+      dayCal = Math.round(dayCal);
+      dayPro = Math.round(dayPro);
+
+      var barWidth = Math.min(100, Math.max(4, (dayCal / maxScale) * 100));
+
+      var barClass = 'cal-good';
+      if (dayCal > 1800) barClass = 'cal-high';
+      else if (dayCal > 1550) barClass = 'cal-mod';
+
+      var p = dStr.split('-');
+      var dateObj = new Date(parseInt(p[0], 10), parseInt(p[1], 10) - 1, parseInt(p[2], 10));
+      var dayName = daysArr[dateObj.getDay()];
+      var monthDay = (dateObj.getMonth() + 1) + '/' + dateObj.getDate();
+      var isSelected = (dStr === selectedDate);
+
+      html += '<div class="chart-row ' + (isSelected ? 'selected' : '') + '" data-date="' + dStr + '" onclick="selectDateFromChart(this.dataset.date)" title="' + dStr + ': ' + dayCal.toLocaleString() + ' kcal, ' + dayPro + 'g protein">' +
+        '<div class="chart-y-label">' +
+          '<span class="chart-day-name">' + dayName + '</span>' +
+          '<span class="chart-day-date">' + monthDay + '</span>' +
+        '</div>' +
+        '<div class="chart-track">' +
+          '<div class="chart-gridline" style="left:20%;"></div>' +
+          '<div class="chart-gridline" style="left:40%;"></div>' +
+          '<div class="chart-target-line" style="left:' + targetPct + '%;"></div>' +
+          '<div class="chart-gridline" style="left:80%;"></div>' +
+          '<div class="chart-bar ' + barClass + '" style="width:' + barWidth + '%;">' +
+            '<span class="chart-bar-text">' + dayCal.toLocaleString() + ' kcal</span>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    });
+
+    html += '</div>';
+
+    html += '<div class="chart-x-axis">' +
+      '<div class="x-axis-spacer"></div>' +
+      '<div class="x-axis-ticks">' +
+        '<span style="left:0%;">0</span>' +
+        '<span style="left:20%;">500</span>' +
+        '<span style="left:40%;">1,000</span>' +
+        '<span style="left:' + targetPct + '%; font-weight:700; color:var(--good);">1,500</span>' +
+        '<span style="left:80%;">2,000</span>' +
+        '<span style="left:100%;">2,500</span>' +
+      '</div>' +
+    '</div>' +
+    '<div class="x-axis-title">Calorie Intake (kcal) &rarr;</div>';
+
+    container.innerHTML = html;
+  }
+
+  function selectDateFromChart(d) {
+    selectedDate = d;
+    renderRunway();
+    renderCalorieChart();
+    var runwayCard = document.getElementById('macro-runway-card');
+    if (runwayCard) {
+      runwayCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
   }
 
   // Render Macro Runway
@@ -1064,6 +1388,7 @@
 
   // Initialize
   renderRunway();
+  renderCalorieChart();
   switchSession(1);
 </script>
 </body>
