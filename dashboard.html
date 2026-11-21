@@ -102,6 +102,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      flex-wrap: wrap;
     }
     .btn-pill {
       background: var(--surface-2);
@@ -671,6 +672,7 @@
       <h1>⚡ Eleanor <span class="brand-badge">ATHLETE HUB</span></h1>
     </div>
     <div class="header-actions">
+      <button class="btn-pill" id="refresh-btn" onclick="refreshPage()" title="Refresh Dashboard">🔄 Refresh</button>
       <button class="btn-pill" onclick="openProfileModal()">ℹ️ Profile</button>
       <button class="btn-pill" id="theme-toggle-btn" onclick="toggleTheme()">🌓 Theme</button>
     </div>
@@ -1205,6 +1207,19 @@
     localStorage.setItem('theme', next);
   }
   document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');
+
+  // Refresh
+  function refreshPage() {
+    var btn = document.getElementById('refresh-btn');
+    if (btn) btn.innerHTML = '⏳ Refreshing...';
+    if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+      var url = new URL(window.location.href);
+      url.searchParams.set('_t', Date.now());
+      window.location.href = url.toString();
+    } else {
+      window.location.reload();
+    }
+  }
 
   // Profile Modal
   function openProfileModal() { document.getElementById('profile-modal').classList.add('active'); }
